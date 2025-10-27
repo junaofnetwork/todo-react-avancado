@@ -43,3 +43,6 @@ export function TarefasProvider({ children }) {
     </TarefasContext.Provider>
   );
 }
+
+
+export default TarefasProvider;

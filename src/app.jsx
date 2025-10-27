@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { TarefasProvider, TarefasContext } from "./context/TarefasContext";
 import ListaTarefas from "./components/ListaTarefas";
 import FiltroTarefas from "./components/FiltroTarefas";
+import "./style.css";
+
 
 function Conteudo() {
   const [texto, setTexto] = useState("");
@@ -13,17 +15,17 @@ function Conteudo() {
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Lista de Tarefas 🧠</h1>
+    <div className="container">
+      <h1 className="title">Lista de Tarefas 🧠</h1>
 
-      <div style={styles.inputContainer}>
+      <div className="inputContainer">
         <input
           value={texto}
           onChange={(e) => setTexto(e.target.value)}
           placeholder="Digite uma tarefa..."
-          style={styles.input}
+          className="input"
         />
-        <button onClick={handleAdd} style={styles.buttonAdd}>
+        <button onClick={handleAdd} className="buttonAdd">
           Adicionar
         </button>
       </div>
@@ -42,30 +44,4 @@ export default function App() {
   );
 }
 
-const styles = {
-  container: {
-    width: "400px",
-    margin: "40px auto",
-    textAlign: "center",
-    background: "#f5f5f5",
-    padding: "20px",
-    borderRadius: "10px",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-  },
-  title: { marginBottom: "20px" },
-  inputContainer: { display: "flex", gap: "10px", marginBottom: "20px" },
-  input: {
-    flex: 1,
-    padding: "10px",
-    borderRadius: "5px",
-    border: "1px solid #ccc",
-  },
-  buttonAdd: {
-    padding: "10px 15px",
-    borderRadius: "5px",
-    border: "none",
-    background: "#4CAF50",
-    color: "white",
-    cursor: "pointer",
-  },
-};
+
